@@ -2,9 +2,9 @@ import React from "react";
 
 const Header: React.FC = () => {
   return (
-    <div className="px-20 py-12 flex justify-between">
-      <h1>Nibras</h1>
-      <ul className="flex space-x-12">
+    <div className=" flex items-center p-20 justify-between">
+      <p className="text-2xl">Nibras</p>
+      <ul className="flex space-x-12 items-center">
         <li>
           <a>Projects</a>
         </li>
