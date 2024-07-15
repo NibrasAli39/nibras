@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Lato } from "next/font/google";
+import { Inter, Lato, Quicksand } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 
-const lato = Lato({ weight: "400", subsets: ["latin"] });
+const quicksand = Quicksand({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-quicksand",
+});
+
+const lato = Lato({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-lato",
+});
 
 export const metadata: Metadata = {
   title: "Nibras",
@@ -17,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body className={`${quicksand.variable} ${lato.variable}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
