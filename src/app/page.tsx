@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="p-6 lg:max-w-screen-xl mx-auto">
       <div className="flex max-w-screen-lg mx-auto flex-col mt-16 prose">
-        <h1 className="text-6xl font-bold transform">
+        <h1 className="text-4xl md:text-6xl font-bold transform">
           I&apos;m <span className="bg-[#F1DE9A] p-2 rounded-lg">Nibras Ali</span>
         </h1>
         <p>
