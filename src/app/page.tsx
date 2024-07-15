@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="max-w-screen-xl mx-auto  min-h-screen">
-      <div className="flex max-w-screen-lg mx-auto space-y-4 flex-col mt-20 ">
-        <h1 className="text-4xl font-bold">
+    <div className="max-w-screen-xl mx-auto">
+      <div className="flex max-w-screen-lg mx-auto space-y-10 flex-col mt-32 ">
+        <h1 className="text-6xl font-bold">
           I'm <span className="bg-[#F1DE9A] p-2 rounded-lg">Nibras Ali</span>
         </h1>
         <p>
@@ -29,6 +29,18 @@ const HomePage: React.FC = () => {
           combination of skills, experience, and personality can drive your
           project to success.
         </p>
+        <div className="flex group shrink max-w-fit space-x-2 hover:border-b-2 hover:border-[#F1DE9A] hover:pb-2">
+          <Link href={"/about"} className="">
+            See More About Me
+          </Link>
+          <Image
+            className="group-hover:animate-bounce"
+            alt="next arrow"
+            src={"/trending-flat.svg"}
+            width={24}
+            height={24}
+          />
+        </div>
       </div>
     </div>
   );
