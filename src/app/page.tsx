@@ -5,14 +5,14 @@ import Link from "next/link";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <div className="flex max-w-screen-lg mx-auto space-y-10 flex-col mt-32 ">
-        <h1 className="text-6xl font-bold">
+    <div className=" p-6 lg:max-w-screen-xl mx-auto">
+      <div className="flex max-w-screen-lg mx-auto flex-col mt-16 prose">
+        <h1 className="text-6xl font-bold transform">
           I'm <span className="bg-[#F1DE9A] p-2 rounded-lg">Nibras Ali</span>
         </h1>
         <p>
-          Results-driven full stack developer with a proven ability to quickly
-          adapt to new technologies and deliver exceptional results. My
+          Results-driven Senior full stack developer with a proven ability to
+          quickly adapt to new technologies and deliver exceptional results. My
           technical toolkit includes Node.js, TypeScript, React, Next.js, and
           advanced AWS solutions, backed by a track record of success in
           startup, enterprise, and freelance contexts. From co-founding a
@@ -29,17 +29,55 @@ const HomePage: React.FC = () => {
           combination of skills, experience, and personality can drive your
           project to success.
         </p>
-        <div className="flex group shrink max-w-fit space-x-2 hover:border-b-2 hover:border-[#F1DE9A] hover:pb-2">
-          <Link href={"/about"} className="">
+        <div className="flex items-center max-w-fit space-x-2 hover:pb-[-3] hover:border-b-2 hover:border-[#F1DE9A] ">
+          <Link href={"/about"} className="no-underline">
             See More About Me
           </Link>
           <Image
-            className="group-hover:animate-bounce"
+            className="mt-1 mb-1"
             alt="next arrow"
             src={"/trending-flat.svg"}
-            width={24}
-            height={24}
+            width={32}
+            height={32}
           />
+        </div>
+        <div className="flex max-w-fit space-x-6">
+          <Link href={"https://github.com/nibrasali39"}>
+            <Image
+              className=""
+              alt="github.png"
+              src={"/github.svg"}
+              width={32}
+              height={32}
+            />
+          </Link>
+          <Link href={"https://www.instagram.com/clayinck/"}>
+            <Image
+              className=""
+              alt="instagram.png"
+              src={"/instagram.svg"}
+              width={32}
+              height={32}
+            />
+          </Link>
+          <Link href={"https://linkedin.com/in/nibrasali39"}>
+            <Image
+              className=""
+              alt="linkedin.png"
+              src={"/linkedin.svg"}
+              width={32}
+              height={32}
+            />
+          </Link>
+          <Link href={"https://medium.com/@nibrasali39"}>
+            <Image
+              className=""
+              alt="medium.png"
+              src={"/medium.svg"}
+              width={32}
+              height={32}
+            />
+          </Link>
         </div>
       </div>
     </div>
