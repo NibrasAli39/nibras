@@ -40,8 +40,10 @@ const Post: React.FC = () => {
   }
 
   return (
-    <div className="prose max-w-screen-lg p-4 mx-auto items-center flex flex-col mt-20">
-      <h1 className="text-2xl md:text-4xl">{post.title}</h1>
+    <div className="prose max-w-screen-md p-4 mx-auto items-center flex flex-col mt-20">
+      <h1 className="text-2xl text-left md:text-4xl max-w-screen-sm">
+        {post.title}
+      </h1>
       <div
         className="prose"
         dangerouslySetInnerHTML={{ __html: post["content:encoded"] }}
