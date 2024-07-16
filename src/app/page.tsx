@@ -104,7 +104,7 @@ const HomePage: React.FC = () => {
               height={32}
             />
           </Link>
-          <Link href={"https://linkedin.com/in/nibrasali39"}>
+          <Link href={"https://www.linkedin.com/in/nibrasali"}>
             <Image
               className=""
               alt="linkedin.png"
