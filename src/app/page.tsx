@@ -2,10 +2,9 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
 import Image from "next/image";
 import Link from "next/link";
-import BlogList from "./components/BlogList";
+
 import { useRouter, useSearchParams } from "next/navigation";
 
 interface Post {

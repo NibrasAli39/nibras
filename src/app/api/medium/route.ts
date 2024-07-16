@@ -1,4 +1,3 @@
-// app/api/medium/route.ts
 import { NextResponse } from "next/server";
 import RSSParser from "rss-parser";
 

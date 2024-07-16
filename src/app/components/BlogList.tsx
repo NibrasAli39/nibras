@@ -1,9 +1,4 @@
-// pages/index.tsx
-import { GetStaticProps } from "next";
 import Link from "next/link";
-import RSSParser from "rss-parser";
-
-const parser = new RSSParser();
 
 interface Post {
   guid: string;
@@ -14,20 +9,6 @@ interface Post {
 interface HomeProps {
   posts: Post[];
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    const feed = await parser.parseURL("https://medium.com/feed/@nibrasali39");
-    return {
-      props: { posts: feed.items },
-    };
-  } catch (error) {
-    console.error("Error fetching RSS feed:", error);
-    return {
-      props: { posts: [] },
-    };
-  }
-};
 
 const Home: React.FC<HomeProps> = ({ posts }) => {
   return (
