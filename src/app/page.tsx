@@ -7,18 +7,19 @@ const HomePage: React.FC = () => {
   return (
     <div className="p-6 lg:max-w-screen-xl mx-auto">
       <div className="flex max-w-screen-lg mx-auto flex-col mt-16 prose">
-        <h1 className="text-4xl md:text-6xl font-bold transform">
-          I&apos;m <span className="bg-[#F1DE9A] p-2 rounded-lg">Nibras Ali</span>
+        <h1 className="text-3xl md:text-4xl font-bold transform">
+          I&apos;m{" "}
+          <span className="bg-[#F1DE9A] p-2 rounded-lg">Nibras Ali</span>
         </h1>
         <p>
-          Results-driven Senior full stack developer with a proven ability to
-          quickly adapt to new technologies and deliver exceptional results. My
-          technical toolkit includes Node.js, TypeScript, React, Next.js, and
-          advanced AWS solutions, backed by a track record of success in
-          startup, enterprise, and freelance contexts. From co-founding a
-          startup to leading enterprise projects, I&apos;ve honed a diverse skill set
-          and a keen eye for creating intuitive, visually appealing
-          applications.
+          Results-driven Senior full stack developer and Computer Scientist with
+          a proven ability to quickly adapt to new technologies and deliver
+          exceptional results. My technical toolkit includes Node.js,
+          TypeScript, React, Next.js, and advanced AWS solutions, backed by a
+          track record of success in startup, enterprise, and freelance
+          contexts. From co-founding a startup to leading enterprise projects,
+          I&apos;ve honed a diverse skill set and a keen eye for creating
+          intuitive, visually appealing applications.
         </p>
         <p>
           Known for my ability to forge strong working relationships, I bring a
@@ -79,6 +80,33 @@ const HomePage: React.FC = () => {
             />
           </Link>
         </div>
+      </div>
+      <div className="max-w-screen-lg mt-16 mx-auto prose">
+        <h2 className="md:text-3xl">Work</h2>
+        <h3>
+          TransIT <span className="text-gray-400 text-sm">(2021-Present)</span>
+        </h3>
+        <p>
+          Senior Software Engineer currently working closely with leadership in
+          architecting and building scalable cloud solutions
+        </p>
+        <h3>
+          Strada <span className="text-gray-400 text-sm">(2020-2021)</span>
+        </h3>
+        <p>
+          Worked as full stack developer to build e-commerce art platform for
+          highly curated digital assets
+        </p>
+        <h3>
+          UshAR <span className="text-gray-400 text-sm">((2018-2020)</span>{" "}
+        </h3>
+        <p>
+          Co-founded ed-tech startup and led React / React Native teams for
+          client SaaS products
+        </p>
+      </div>
+      <div className="max-w-screen-lg mt-16 mx-auto prose">
+        <h2 className="md:text-3xl">Posts</h2>
       </div>
     </div>
   );
