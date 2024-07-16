@@ -151,25 +151,15 @@ const HomePage: React.FC = () => {
       </div>
       <div className="max-w-screen-lg mt-16 mx-auto prose">
         <h2 className="md:text-3xl">Posts</h2>
-        {selectedPost ? (
-          <div>
-            <h2>{selectedPost.title}</h2>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: selectedPost["content:encoded"],
-              }}
-            />
-            <button onClick={() => router.push("/")}>Back to list</button>
-          </div>
-        ) : (
-          <ul>
-            {posts.map((post) => (
-              <li key={post.guid}>
-                <Link href={`/?id=${post.guid}`}>{post.title}</Link>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul>
+          {posts.map((post) => (
+            <li key={post.guid}>
+              <Link href={`/post/${encodeURIComponent(post.guid)}`}>
+                {post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
