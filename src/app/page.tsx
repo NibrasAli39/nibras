@@ -1,9 +1,53 @@
+"use client";
+
 import React from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Image from "next/image";
 import Link from "next/link";
+import BlogList from "./components/BlogList";
+import { useRouter, useSearchParams } from "next/navigation";
+
+interface Post {
+  guid: string;
+  title: string;
+  link: string;
+  "content:encoded": string;
+}
 
 const HomePage: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch("/api/medium");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
+  useEffect(() => {
+    if (id) {
+      const post = posts.find((post) => post.guid === id);
+      setSelectedPost(post || null);
+    } else {
+      setSelectedPost(null);
+    }
+  }, [id, posts]);
+
   return (
     <div className="p-6 lg:max-w-screen-xl mx-auto">
       <div className="flex max-w-screen-lg mx-auto flex-col mt-16 prose">
@@ -107,6 +151,25 @@ const HomePage: React.FC = () => {
       </div>
       <div className="max-w-screen-lg mt-16 mx-auto prose">
         <h2 className="md:text-3xl">Posts</h2>
+        {selectedPost ? (
+          <div>
+            <h2>{selectedPost.title}</h2>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: selectedPost["content:encoded"],
+              }}
+            />
+            <button onClick={() => router.push("/")}>Back to list</button>
+          </div>
+        ) : (
+          <ul>
+            {posts.map((post) => (
+              <li key={post.guid}>
+                <Link href={`/?id=${post.guid}`}>{post.title}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
