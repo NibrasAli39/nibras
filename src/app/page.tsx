@@ -74,8 +74,13 @@ const HomePage: React.FC = () => {
           project to success.
         </p>
         <div className="flex items-center max-w-fit space-x-2 hover:pb-[-3] hover:border-b-2 hover:border-[#F1DE9A] ">
-          <Link href={"/about"} className="no-underline">
-            See More About Me
+          <Link
+            href={
+              "mailto:nibrasali39@gmail.com?subject=I%20want%20to%20hire%20you"
+            }
+            className="no-underline"
+          >
+            Get in Touch
           </Link>
           <Image
             className="mt-1 mb-1"
