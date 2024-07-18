@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -48,7 +49,14 @@ const HomePage: React.FC = () => {
   }, [id, posts]);
 
   return (
-    <div className="p-6 lg:max-w-screen-xl mx-auto">
+    <motion.div
+      transition={{
+        ease: "linear",
+        duration: 2,
+        x: { duration: 1 },
+      }}
+      className="p-6 lg:max-w-screen-xl mx-auto"
+    >
       <div className="flex max-w-screen-lg mx-auto flex-col mt-16 prose">
         <h1 className="text-3xl md:text-4xl font-bold transform">
           I&apos;m{" "}
@@ -146,7 +154,7 @@ const HomePage: React.FC = () => {
           highly curated digital assets
         </p>
         <h3>
-          UshAR <span className="text-gray-400 text-sm">((2018-2020)</span>{" "}
+          UshAR <span className="text-gray-400 text-sm">(2018-2020)</span>{" "}
         </h3>
         <p>
           Co-founded ed-tech startup and led React / React Native teams for
@@ -165,7 +173,7 @@ const HomePage: React.FC = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

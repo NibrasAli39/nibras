@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface Post {
   guid: string;
@@ -12,7 +13,13 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ posts }) => {
   return (
-    <div>
+    <motion.div
+      transition={{
+        ease: "linear",
+        duration: 2,
+        x: { duration: 1 },
+      }}
+    >
       <h1>My Medium Blog Posts</h1>
       <ul>
         {posts.map((post) => (
@@ -23,7 +30,7 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 

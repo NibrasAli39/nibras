@@ -1,9 +1,10 @@
 // app/post/[id]/page.tsx
 "use client";
 
-import { Suspense, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
+import { motion } from "framer-motion";
 
 interface Post {
   guid: string;
@@ -40,7 +41,14 @@ const Post: React.FC = () => {
   }
 
   return (
-    <div className="prose max-w-screen-md p-4 mx-auto items-center flex flex-col mt-20">
+    <motion.div
+      transition={{
+        ease: "linear",
+        duration: 2,
+        x: { duration: 1 },
+      }}
+      className="prose max-w-screen-md p-4 mx-auto items-center flex flex-col mt-20"
+    >
       <h1 className="text-2xl text-left md:text-4xl max-w-screen-sm">
         {post.title}
       </h1>
@@ -49,7 +57,7 @@ const Post: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: post["content:encoded"] }}
       />
       <button onClick={() => router.push("/")}>Back to list</button>
-    </div>
+    </motion.div>
   );
 };
 
