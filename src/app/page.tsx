@@ -60,7 +60,13 @@ const HomePage: React.FC = () => {
       <div className="flex max-w-screen-lg mx-auto flex-col mt-16 prose">
         <h1 className="text-3xl md:text-4xl font-bold transform">
           I&apos;m{" "}
-          <span className="bg-[#F1DE9A] p-2 rounded-lg">Nibras Ali</span>
+          <span className="relative">
+            <span
+              className="block absolute -inset-1 -skew-y-3 bg-[#F1DE9A]"
+              aria-hidden="true"
+            ></span>
+            <span className="relative p-2 rounded-lg">Nibras Ali</span>
+          </span>
         </h1>
         <p>
           Results-driven Senior full stack developer and Computer Scientist with
@@ -139,27 +145,36 @@ const HomePage: React.FC = () => {
       </div>
       <div className="max-w-screen-lg mt-16 mx-auto prose">
         <h2 className="md:text-3xl">Work</h2>
-        <h3>
-          TransIT <span className="text-gray-400 text-sm">(2021-Present)</span>
-        </h3>
-        <p>
-          Senior Software Engineer currently working closely with leadership in
-          architecting and building scalable cloud solutions
-        </p>
-        <h3>
-          Strada <span className="text-gray-400 text-sm">(2020-2021)</span>
-        </h3>
-        <p>
-          Worked as full stack developer to build e-commerce art platform for
-          highly curated digital assets
-        </p>
-        <h3>
-          UshAR <span className="text-gray-400 text-sm">(2018-2020)</span>{" "}
-        </h3>
-        <p>
-          Co-founded ed-tech startup and led React / React Native teams for
-          client SaaS products
-        </p>
+        <ul className="custom-list list-disc">
+          <li className="timeline-item">
+            <h3>
+              TransIT{" "}
+              <span className="text-gray-400 text-sm">(2021-Present)</span>
+            </h3>
+            <p>
+              Senior Software Engineer currently working closely with leadership
+              in architecting and building scalable cloud solutions
+            </p>
+          </li>
+          <li className="timeline-item">
+            <h3>
+              Strada <span className="text-gray-400 text-sm">(2020-2021)</span>
+            </h3>
+            <p>
+              Worked as full stack developer to build e-commerce art platform
+              for highly curated digital assets
+            </p>
+          </li>
+          <li className="timeline-item">
+            <h3>
+              UshAR <span className="text-gray-400 text-sm">(2018-2020)</span>{" "}
+            </h3>
+            <p>
+              Co-founded ed-tech startup and led React / React Native teams for
+              client SaaS products
+            </p>
+          </li>
+        </ul>
       </div>
       <div className="max-w-screen-lg mt-16 mx-auto prose">
         <h2 className="md:text-3xl">Posts</h2>

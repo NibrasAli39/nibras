@@ -23,3 +23,21 @@ body {
     border-bottom: 1px solid black;
   }
 }
+
+.custom-list {
+  list-style-type: none;
+  padding-left: 1.25rem; /* Adjust to your preference */
+  position: relative;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 0.75rem; /* Adjust to your preference */
+}
+
+.custom-list li::before {
+  content: "o";
+  position: absolute;
+  left: -1.25rem; /* Adjust to your preference */
+  color: #f9d860; /* Your custom color (e.g., Tailwind blue-500) */
+}
